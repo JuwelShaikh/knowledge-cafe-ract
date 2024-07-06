@@ -2,8 +2,8 @@ import proPic from '../../assets/images/profile.png'
 
 const Header = () => {
     return (
-        <div className="text-2xl font-bold">
-            <h1>Knowledge Cafe</h1>
+        <div className='flex justify-between place-items-center mx-5 p-5'>
+            <h1 className="text-2xl font-bold">Knowledge Cafe</h1>
             <img src={proPic} alt="" />
         </div>
     );
