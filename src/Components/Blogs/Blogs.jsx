@@ -12,8 +12,8 @@ const Blogs = () => {
     },[])
 
     return (
-        <div>
-            
+        <div className='text-3xl'>
+            blogs
         </div>
     );
 };
