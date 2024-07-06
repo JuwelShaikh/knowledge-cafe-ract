@@ -7,13 +7,13 @@ function App() {
 
 
   return (
-    <>
+    <div className='max-w-5xl items-center mx-auto'>
       <Header />
       <main className='md:flex'>
         <Blogs />
         <Bookmarks />
       </main>
-    </>
+    </div>
   )
 }
 

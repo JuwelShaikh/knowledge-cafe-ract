@@ -5,9 +5,9 @@ const Blog = ({ blog }) => {
     const { title, cover, author_img, author, posted_date, reading_time } = blog;
     return (
         <>
-            <div>
+            <div className='my-4 border-b-2'>
                 <img src={cover} alt={`This is the picture of the ${title}`} />
-                <div className='flex justify-between'>
+                <div className='flex justify-between my-2'>
                     <div className='flex'>
                         <img className='w-12' src={author_img} alt="Author img" />
                         <div className='ml-3'>
@@ -16,12 +16,12 @@ const Blog = ({ blog }) => {
                         </div>
                     </div>
                     <div className='flex'>
-                        <p>0{reading_time} read time</p>
-                        <button>btn</button>
+                        <p>{reading_time} read time</p>
+                        {/* <button>btn</button> */}
                     </div>
                 </div>
-            </div>
             <h1 className="text-xl ">{title}</h1>
+            </div>
         </>
     );
 };
