@@ -21,7 +21,7 @@ const Blog = ({ blog, handleAddBookmark }) => {
                     <div className='flex'>
                         <p>{reading_time} read time</p>
                         <button
-                            onClick={handleAddBookmark}
+                            onClick={()=>handleAddBookmark(blog)}
                             className='ml-2 '><CiBookmark /></button>
                     </div>
                 </div>
