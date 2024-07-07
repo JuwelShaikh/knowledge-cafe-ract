@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { useState } from 'react';
 import { CiBookmark } from "react-icons/ci";
 
 
@@ -6,6 +7,12 @@ import { CiBookmark } from "react-icons/ci";
 
 const Blog = ({ blog, handleAddBookmark }) => {
     const { title, cover, author_img, author, posted_date, reading_time, hashtags } = blog;
+    
+    const [isClicked, setClicked] = useState(false)
+    const handleToggle =()=>{
+        setClicked(true)
+    }
+
     return (
         <>
             <div className='my-4 border-b-2'>
@@ -21,8 +28,9 @@ const Blog = ({ blog, handleAddBookmark }) => {
                     <div className='flex'>
                         <p>{reading_time} read time</p>
                         <button
-                            onClick={()=>handleAddBookmark(blog)}
-                            className='ml-2 '><CiBookmark /></button>
+                            onClick={() => handleAddBookmark(blog)}
+                            
+                            className='ml-2'><CiBookmark onClick={handleToggle} className={isClicked?'text-yellow-500': 'text-black'} /></button>
                     </div>
                 </div>
                 <div className='mb-4'>
