@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
-import { CiBookmarkPlus } from "react-icons/ci";
+import { CiBookmark } from "react-icons/ci";
+
 
 
 
@@ -19,7 +20,7 @@ const Blog = ({ blog }) => {
                     </div>
                     <div className='flex'>
                         <p>{reading_time} read time</p>
-                        <button className='ml-2'><CiBookmarkPlus/></button>
+                        <button className='ml-2 '><CiBookmark/></button>
                     </div>
                 </div>
                 <div className='mb-4'>
