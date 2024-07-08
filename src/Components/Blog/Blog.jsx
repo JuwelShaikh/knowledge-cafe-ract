@@ -1,15 +1,15 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
-import { CiBookmark } from "react-icons/ci";
+import { FaBookmark } from "react-icons/fa6";
 
 
 
 
-const Blog = ({ blog, handleAddBookmark }) => {
+const Blog = ({ blog, handleAddBookmark, handleMarkAsRead }) => {
     const { title, cover, author_img, author, posted_date, reading_time, hashtags } = blog;
-    
+
     const [isClicked, setClicked] = useState(false)
-    const handleToggle =()=>{
+    const handleToggle = () => {
         setClicked(true)
     }
 
@@ -29,8 +29,8 @@ const Blog = ({ blog, handleAddBookmark }) => {
                         <p>{reading_time} read time</p>
                         <button
                             onClick={() => handleAddBookmark(blog)}
-                            
-                            className='ml-2'><CiBookmark onClick={handleToggle} className={isClicked?'text-yellow-500': 'text-black'} /></button>
+
+                            className='ml-2'><FaBookmark onClick={handleToggle} className={isClicked ? 'text-yellow-500' : 'text-black'} /></button>
                     </div>
                 </div>
                 <div className='mb-4'>
@@ -40,7 +40,7 @@ const Blog = ({ blog, handleAddBookmark }) => {
                             hashtags.map(hash => <span key={blog.id}><a href=''>#{hash} </a></span>)
                         }
                     </p>
-                    <a className='text-blue-700	 mb-5' href=""><u>Mark as read</u></a>
+                    <button  onClick={()=>handleMarkAsRead(reading_time)} className='text-blue-700	 mb-5'><u>Mark as read</u></button>
                 </div>
             </div>
         </>
