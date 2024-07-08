@@ -8,9 +8,14 @@ import { FaBookmark } from "react-icons/fa6";
 const Blog = ({ blog, handleAddBookmark, handleMarkAsRead }) => {
     const { title, cover, author_img, author, posted_date, reading_time, hashtags } = blog;
 
+    const [isClickedBM, setIsClickedBM] = useState(false);
+    const handleAddBookmarkClick = () =>{
+        setIsClickedBM(!isClickedBM)
+    }
+
     const [isClicked, setClicked] = useState(false)
     const handleToggle = () => {
-        setClicked(true)
+        setClicked(!isClicked)
     }
 
     return (
@@ -28,7 +33,7 @@ const Blog = ({ blog, handleAddBookmark, handleMarkAsRead }) => {
                     <div className='flex'>
                         <p>{reading_time} read time</p>
                         <button
-                            onClick={() => handleAddBookmark(blog)}
+                            onClick={() => handleAddBookmark(blog) & handleAddBookmarkClick}
 
                             className='ml-2'><FaBookmark onClick={handleToggle} className={isClicked ? 'text-yellow-500' : 'text-black'} /></button>
                     </div>
@@ -40,7 +45,7 @@ const Blog = ({ blog, handleAddBookmark, handleMarkAsRead }) => {
                             hashtags.map(hash => <span key={blog.id}><a href=''>#{hash} </a></span>)
                         }
                     </p>
-                    <button  onClick={()=>handleMarkAsRead(reading_time)} className='text-blue-700	 mb-5'><u>Mark as read</u></button>
+                    <button onClick={() => handleMarkAsRead(reading_time)} className='text-blue-700	 mb-5'><u>Mark as read</u></button>
                 </div>
             </div>
         </>

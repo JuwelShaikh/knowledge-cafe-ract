@@ -17,6 +17,7 @@ const Blogs = ({ handleAddBookmark, handleMarkAsRead }) => {
             <h3 className='text-xl'>Blogs: {Blogs.length}</h3>
             {
                 Blogs.map(blog => <Blog
+                    
                     handleAddBookmark={handleAddBookmark}
                     handleMarkAsRead={handleMarkAsRead}
                     key={blog.id}
